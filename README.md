@@ -8,9 +8,9 @@ Publishing this in the hopes it'll be helpful to someone - and because it's easi
 
 This repository contains the following solutions:
 
-* CertificatePasswordRecovery: The original password recovery tool by boredwookie(?),
+* CertificatePasswordRecovery: The original password recovery tool by [boredwookie](https://github.com/boredwookie/)(?),
   * Documentation and the original download package available on his site: https://7thzero.com/blog/certificate-password-recovery-tool
-* CertificatePasswordRecovery2: A modernized password recovery tool version by @koskila 
+* CertificatePasswordRecovery2: A modernized password recovery tool version by [koskila](https://github.com/koskila/) 
   * Core improvements:
     * Multi-threaded
     * NET5
