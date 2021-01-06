@@ -240,8 +240,6 @@ namespace CertificatePasswordRecovery
             // Password found?
             bool password_found = false;
 
-            //ThreadPool.SetMaxThreads(1000, 1000);
-
             // loop to find the password
             do
             {
@@ -302,9 +300,7 @@ namespace CertificatePasswordRecovery
                 // Loop counter. Keep counting!
                 i++;
             }
-            while (BigInteger.Compare(i, RepeatUntil) <= 0);
-
-            while (ThreadPool.PendingWorkItemCount == 0) Thread.Sleep(1000);
+            while (BigInteger.Compare(i, RepeatUntil) <= 0 && !password_found);
 
             if (!password_found && ThreadPool.PendingWorkItemCount == 0)
                 MessageBox.Show("Password not found. :(", "Info");
