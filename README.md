@@ -4,6 +4,8 @@ This repository holds the code for a simple tool that can be used to brute-force
 
 Publishing this in the hopes it'll be helpful to someone - and because it's easier to host samples here than on my blog :)
 
+Note, that brute-forcing passwords is, in any case, very slow.
+
 ## Repository contents
 
 This repository contains the following solutions:
@@ -15,6 +17,7 @@ This repository contains the following solutions:
     * Multi-threaded
     * NET5
     * Around 9-10 times performance improvement
+  * See this post for details: [How to recover the private key of a (.pfx) certificate?](https://www.koskila.net/how-to-recover-the-private-key-of-a-pfx-certificate/)
 
 ## Contact
 
