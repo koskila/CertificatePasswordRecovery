@@ -91,7 +91,11 @@ jobs:
           path: ${{steps.createReleaseTag.outputs.string}}
 
     # Since we have a directory, create a zip
-    - run: zip -r "${{steps.createReleaseTag.outputs.string}}.zip" "${{steps.createReleaseTag.outputs.string}}"
+    - name: Archive Release
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: "${{steps.createReleaseTag.outputs.string}}.zip"
+        exclusions: '*.git* /*node_modules/* .editorconfig'
 
     - name: Create Release
       id: create_release
