@@ -84,6 +84,15 @@ jobs:
     - name: Build
       run: dotnet build
 
+    - name: Download Artifact
+      uses: actions/download-artifact@v2
+      with:
+          name: ${{steps.createReleaseTag.outputs.string}}
+          path: ${{steps.createReleaseTag.outputs.string}}
+
+    # Since we have a directory, create a zip
+    - run: zip -r "${{steps.createReleaseTag.outputs.string}}.zip" "${{steps.createReleaseTag.outputs.string}}"
+
     - name: Create Release
       id: create_release
       uses: actions/create-release@latest
@@ -96,7 +105,8 @@ jobs:
           Automated Release by GitHub Action CI
         draft: false
         prerelease: true
-        
+      continue-on-error: true
+      
     - name: Upload Release Asset (x64)
       id: upload-release-asset-x64
       uses: actions/upload-release-asset@v1
@@ -104,6 +114,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./SampleX64.ZIP
-        asset_name: SampleX64.ZIP
+        asset_path: ./${{steps.createReleaseTag.outputs.string}}.zip
+        asset_name: ${{steps.createReleaseTag.outputs.string}}.zip
         asset_content_type: application/zip
