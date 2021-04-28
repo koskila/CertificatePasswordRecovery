@@ -16,3 +16,9 @@ jobs:
       - run: dotnet test
       - name: Publish
         run: dotnet publish
+      - name: Upload WebApp1 Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+         name: desktop
+         path: D:\a\CertificatePasswordRecovery\CertificatePasswordRecovery\CertificatePasswordRecovery2\bin\Debug\net5.0-windows\publish\
+       
