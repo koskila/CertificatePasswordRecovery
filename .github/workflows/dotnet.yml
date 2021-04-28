@@ -1,0 +1,18 @@
+name: .NET 5 CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: .NET 5 Application
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '5.0.101' # Check for latest at link at .NET 5 download page
+      - run: dotnet build
+      - run: dotnet test
+      - name: Publish
+        run: dotnet publish
