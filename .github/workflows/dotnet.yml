@@ -21,4 +21,21 @@ jobs:
         with:
          name: desktop
          path: D:\a\CertificatePasswordRecovery\CertificatePasswordRecovery\CertificatePasswordRecovery2\bin\Debug\net5.0-windows\publish\
+      - name: Release
+        uses: CupOfTea696/gh-action-auto-release@v1.0.2
+        with:
+          # Title for the release
+          # title: # optional, default is Version $semver
+          # Name for the git tag
+          # tag: # optional, default is $version
+          # Whether or not this release should be published as a draft
+          draft: true # optional, default is false
+          # The path to the CHANGELOG
+          # changelog: # optional, default is CHANGELOG.md
+          # String a CHANGELOG entry must contain to be used as the entry for this release
+          # changelog-entry: # optional, default is $version
+          # Pattern the commit message must match to create a release
+          # regex: # optional
+          # Pattern the commit message must match to mark the release as a prerelease
+          # prerelease-regex: # optional
        
