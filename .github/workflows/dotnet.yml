@@ -37,7 +37,7 @@ jobs:
           # changelog: # optional, default is CHANGELOG.md
           # String a CHANGELOG entry must contain to be used as the entry for this release
           # changelog-entry: # optional, default is $version
-          # Pattern the commit message must match to create a release
+          # Pattern the commit message must match to create a release, semver (and optional text around it) by default
           # regex: # optional
           # Pattern the commit message must match to mark the release as a prerelease
           # prerelease-regex: # optional
