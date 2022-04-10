@@ -198,7 +198,7 @@
             this.logPathBx.Name = "logPathBx";
             this.logPathBx.Size = new System.Drawing.Size(273, 20);
             this.logPathBx.TabIndex = 15;
-            this.logPathBx.Text = "c:\\temp\\CertificatePasswordRecoveryLog.txt";
+            this.logPathBx.Text = "";
             // 
             // logLevelLbl
             // 
