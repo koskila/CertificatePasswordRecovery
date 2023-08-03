@@ -243,6 +243,9 @@ namespace CertificatePasswordRecovery
             // loop to find the password
             do
             {
+                // Exit the loop if password was found already
+                if (password_found) break;
+
                 // Increment the highest position of the array
                 password[depth]++;
 
@@ -264,9 +267,7 @@ namespace CertificatePasswordRecovery
                     }
                 }
 
-                //
                 // Create a string based on the sequenced characters
-                //
                 char[] password_sequenced = new char[password.Length];
                 for (int pos = 0; pos < password.Length; pos++)
                 {
@@ -274,11 +275,13 @@ namespace CertificatePasswordRecovery
                 }
                 string pw = new string(password_sequenced);
                 pw = pw.Trim();
+
                 // Prepend the 'prefix' string (if one is entered)
                 if (prefixBx.Text.Length > 0)
                 {
                     pw = prefixBx.Text + pw;
                 }
+
                 // Append the 'suffix' string (if one is entered)
                 if (suffixBx.Text.Length > 0)
                 {
