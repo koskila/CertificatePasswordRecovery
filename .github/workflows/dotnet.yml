@@ -1,4 +1,4 @@
-name: .NET 5 CI
+name: .NET 6 CI
 
 on: [push]
 
@@ -8,13 +8,13 @@ env:
 jobs:
   build:
     runs-on: windows-latest
-    name: .NET 5 Application
+    name: .NET Application
     steps:
       - uses: actions/checkout@v2
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.101' # Check for latest at link at .NET 5 download page
+          dotnet-version: '6.0.412'
       - run: dotnet build
       - run: dotnet test
       - name: Publish
